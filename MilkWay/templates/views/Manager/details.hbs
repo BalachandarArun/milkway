@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AddMilkMen</title>
+  <style>
+  /* Base styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* Header styles */
+  .header {
+    background-color: #2C3E50;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Add styles for the company logo */
+  .logo {
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  /* Style for the top container */
+  .top {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: black;
+  }
+
+  /* Style for the Add Milkmen button */
+  .top button {
+    background-color: grey;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    margin-right: 10%;
+    cursor: pointer;
+  }
+
+  /* Style for the Select Month&Year container */
+  .date {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    margin-left: 50%;
+  }
+
+  .date input[type="month"] {
+    margin-left: 10px;
+    border: none;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    outline: none;
+  }
+
+  /* Style for the dynamic table */
+  .table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+
+  .table thead {
+    background-color: #2C3E50;
+    color: #fff;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+
+  .table th {
+    font-weight: bold;
+  }
+
+  .table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  
+  @media (max-width: 768px) {
+    .top {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .top button {
+      margin-top: 10px;
+      margin-right: 0;
+    }
+
+    .date {
+      margin: 10px auto;
+      text-align: center;
+      margin-right: 30px;
+    }
+
+    .date input[type="month"] {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  
+</style>
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="/public/css/logo.png" alt="MilkWay Logo" class="logo">
+    <h1>MilkWay</h1>
+  </div>
+  <div class="top">
+    <h3>Add Milkmen</h3>
+    <a href="details/addMilkmen"><button type="button">+</button></a>
+    <div class="date">
+      <h4>Select Month&Year:</h4>
+      <input type="month">
+    </div>
+  </div>
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name &amp; ID</th>
+          <th>Supplied</th>
+          <th>Received</th>
+          <th>Edit Info</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>karthick (12345)</td>
+          <td>50</td>
+          <td>45</td>
+          <td><button onclick="editInfo()">Edit Info</button></td>
+        </tr>
+        <tr>
+          <td>vishal (67890)</td>
+          <td>25</td>
+          <td>30</td>
+          <td><button onclick="editInfo()">Edit Info</button></td>
+        </tr>
+        <tr>
+          <td>hari (54321)</td>
+          <td>35</td>
+          <td>35</td>
+          <td><button onclick="editInfo()">Edit Info</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+<script>
+  function editInfo() {
+  window.location.href = "/templates/views/Manager/editMilkmen.hbs";
+}
+
+</script>
+</html>
